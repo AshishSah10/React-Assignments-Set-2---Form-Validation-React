@@ -8,7 +8,7 @@ const App = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [username, serUsername] = useState("");
+  const [username, setUsername] = useState("");
   function handleNameChange(event){
     setName(event.target.value);
     console.log(name);
@@ -63,7 +63,9 @@ const App = () => {
       let index = email.search('@');
       const username = email.substr(0, index);
       console.log(username);
-      serUsername(username);
+      setUsername(username);
+    }else{
+      setUsername("");
     }
   }
   return (
