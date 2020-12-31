@@ -54,15 +54,17 @@ const App = () => {
       return;
     }else{
       setError("");
+      return true;
     }
   }
   function handleSubmit(event){
     event.preventDefault();
-    validate();
-    let index = email.search('@');
-    const username = email.substr(0, index);
-    console.log(username);
-    serUsername(username);
+    if(validate()){
+      let index = email.search('@');
+      const username = email.substr(0, index);
+      console.log(username);
+      serUsername(username);
+    }
   }
   return (
     <div id="main">
